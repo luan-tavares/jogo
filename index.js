@@ -1,8 +1,8 @@
 const express = require('express');
 const http = require('http');
-import socketIo = require('socket.io');
+const socketIo = require('socket.io');
 
-import createGame = require('./public/game.js');
+const createGame = require('./public/game.js');
 
 const app = express();
 const server = http.createServer(app);
