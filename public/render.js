@@ -1,4 +1,4 @@
-export default function renderScreen(screen, game, currPlayerId, fnLoop) {
+module.exports = function renderScreen(screen, game, currPlayerId, fnLoop) {
     const context = screen.getContext('2d');
     context.fillStyle = 'white';
     context.clearRect(0, 0, 10, 10);

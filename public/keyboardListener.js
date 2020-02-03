@@ -1,6 +1,6 @@
 const createSubject = require('./observer/observable.js');
 
-export default function createKeyboardListener(document) {
+module.exports = function createKeyboardListener(document) {
 
     let obj = Object.create(createSubject());
 

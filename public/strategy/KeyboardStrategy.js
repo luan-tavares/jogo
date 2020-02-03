@@ -1,6 +1,6 @@
 const StrategyManager = require("./StrategyManager.js");
 
-export default function KeyboardStrategy() {
+module.exports = function KeyboardStrategy() {
     return new StrategyManager({
         ArrowUp(player, screen) {
             player.y = Math.max(player.y - 1, 0);

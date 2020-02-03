@@ -1,4 +1,4 @@
-export default function createSubject() {
+module.exports = function createSubject() {
 
     let state = {
         observers: []
