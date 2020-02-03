@@ -1,4 +1,4 @@
-module.exports = function StrategyManager(strategies) {
+export default function StrategyManager(strategies) {
 
     let currStrategy = null;
 
