@@ -1,4 +1,4 @@
-import StrategyManager from "./StrategyManager.js";
+const StrategyManager = require("./StrategyManager.js");
 
 export default function KeyboardStrategy() {
     return new StrategyManager({

@@ -1,5 +1,5 @@
-import createSubject from './observer/observable.js';
-import KeyboardStrategy from './strategy/KeyboardStrategy.js';
+const createSubject = require('./observer/observable.js');
+const KeyboardStrategy = require('./strategy/KeyboardStrategy.js');
 
 export default function createGame() {
 
