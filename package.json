@@ -1,12 +1,8 @@
 {
-  "name": "jogo",
-  "version": "1",
-  "description": "Jogo",
+  "name": "backend",
+  "version": "1.0.0",
   "main": "index.js",
-  "author": "Luan",
-  "license": "true",
-  "type": "module",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js"
