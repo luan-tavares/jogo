@@ -24,11 +24,13 @@ const _new = function (fn) {
 
 
 const criarHomem = function (nome, idade, arr) {
-    return {
+    let obj = {};
+    Object.assign(obj, {
         nome,
         idade,
         qualquer: arr
-    };
+    });
+    return obj;
 }
 
 const Homem = function (nome, idade, arr) {

@@ -2,8 +2,8 @@ import createSubject from './observer/observable.js';
 
 export default function createKeyboardListener(document) {
 
-    let obj = Object.create(createSubject());
 
+    let obj = Object.create(createSubject());
 
     //let obj = {}
     //Object.setPrototypeOf(obj, createSubject());
@@ -35,8 +35,10 @@ export default function createKeyboardListener(document) {
 
     }
 
-    obj.registerPlayerId = registerPlayerId;
-    obj.unregisterPlayerId = unregisterPlayerId;
+    Object.assign(obj, {
+        registerPlayerId,
+        unregisterPlayerId
+    });
 
     return obj;
 }
