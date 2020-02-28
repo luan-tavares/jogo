@@ -1,8 +1,13 @@
 'use strict'
 
+Object.prototype.atirar = function () {
+    return "Pei pei pei";
+
+}
 
 const _new = function (fn) {
     let obj = {};
+
 
     if (fn.prototype !== null) {
         //obj.__proto__ = fn.prototype;
@@ -10,6 +15,7 @@ const _new = function (fn) {
     }
 
     const arrArgumentos = Array.prototype.slice.call(arguments, 1);
+
 
     const ret = fn.apply(obj, arrArgumentos);
 
@@ -21,10 +27,12 @@ const _new = function (fn) {
     return obj;
 }
 
-
+const homem = {
+    sexo: "M"
+}
 
 const criarHomem = function (nome, idade, arr) {
-    let obj = {};
+    let obj = Object.create(homem);
     Object.assign(obj, {
         nome,
         idade,
@@ -42,13 +50,13 @@ const Homem = function (nome, idade, arr) {
 
 }
 
-const homem = {
-    sexo: "M"
-}
+
 
 Homem.prototype = homem;
 
 let teste = _new(Homem, "a", "b", "c");
+
+//console.log(Object.getPrototypeOf(teste).__proto__);
 
 /*class Homem {
     constructor(nome, idade, arr) {
@@ -59,20 +67,30 @@ let teste = _new(Homem, "a", "b", "c");
     }
 }*/
 
+/***** JOAO*/
+
 let joao = {};
-joao.__proto__ = Homem.prototype; //New faz isso automático
+
 Homem.call(joao, "João", 30, [5]);
 
 //Homem.apply(joao, ["João", 30, [5]]);
 
+Object.setPrototypeOf(joao, homem);
+
+/*** */
+
+
+
 let pedro = criarHomem("Pedro", 30, [1, 5, 9]);
 
 
-Object.setPrototypeOf(pedro, homem);
+Homem.prototype.a = "foo";
 
-Homem.prototype.sexo = "feminino";
+Object.assign(Homem.prototype, { sexo: "bar" });
+Object.assign(Homem.prototype, { teste: "bar" });
 
-console.log(joao.sexo);
+//console.log(pedro.nome + ": " + pedro.sexo);
+//console.log(joao.nome + ": " + joao.sexo);
 //console.log(pedro.__proto__);
 
 for (const property in pedro) {
@@ -81,3 +99,5 @@ for (const property in pedro) {
     }
 }
 
+
+console.log(pedro.__proto__);
